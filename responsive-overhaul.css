@@ -1,0 +1,87 @@
+/* SYNORA — responsive overhaul
+   Designed for 100%, 110%, 125% and 150% browser zoom without clipping. */
+html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+body{min-width:0!important}
+.proApp,.proMain,.proContent{min-width:0!important;max-width:100%!important}
+.proSide{width:260px!important;min-width:260px!important;overflow-y:auto!important;overflow-x:hidden!important}
+.proMain{margin-left:260px!important;width:calc(100% - 260px)!important;max-width:calc(100% - 260px)!important}
+.proContent{width:100%!important;padding-left:clamp(24px,3vw,52px)!important;padding-right:clamp(24px,3vw,52px)!important}
+
+/* Architecture: make the system read as a layered architecture, never a 5-card strip. */
+.archAgentGrid,.archWorkforce{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+.archAgent{min-width:0!important;overflow:hidden!important}
+.archHero{min-width:0!important}
+.archLayers{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+.archAws{min-width:0!important}
+
+/* Fleet cards */
+.fleetGrid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.agentPreview{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+
+/* Settings and every two-column workspace become readable at laptop/zoom widths. */
+.settingsGrid,.settingsLayout,.settingGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;min-width:0!important}
+.settingsGrid>* ,.settingsLayout>* ,.settingGrid>*{min-width:0!important}
+
+/* Latest mission: content, action and telemetry must never overlap. */
+.latest{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;align-items:start!important;gap:16px 24px!important}
+.latest>div:first-child{min-width:0!important}
+.latest>div:first-child h2{overflow-wrap:anywhere!important;word-break:normal!important}
+.latest>button{grid-column:2;grid-row:1;align-self:center!important;white-space:nowrap!important}
+.latestMetrics{position:static!important;grid-column:1 / -1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(4,minmax(90px,1fr))!important;width:100%!important;gap:8px!important}
+.latestMetrics span{min-width:0!important}
+
+/* Prevent large headings from pushing the layout sideways. */
+.commandHero,.commandGrid,.commandReadout,.resultCols,.resultMetrics,.readoutGrid{min-width:0!important}
+.commandHero>* ,.commandGrid>* ,.commandReadout>* ,.resultCols>*{min-width:0!important}
+.commandHero h1,.resultHeader h1,.pageIntro h1,.archIntro h1{overflow-wrap:anywhere}
+
+/* 125% zoom on a 1536px display produces roughly 1229 CSS px. */
+@media (max-width:1400px){
+  .proSide{width:240px!important;min-width:240px!important;padding:22px 12px!important}
+  .proMain{margin-left:240px!important;width:calc(100% - 240px)!important;max-width:calc(100% - 240px)!important}
+  .proContent{padding:34px 30px 80px!important}
+  .proTop{padding:0 28px!important}
+  .commandHero{grid-template-columns:minmax(0,1fr) 280px!important;gap:18px!important}
+  .commandHero h1{font-size:clamp(48px,5vw,72px)!important}
+  .commandGrid{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr)!important}
+  .archAgentGrid,.archWorkforce{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .fleetGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .agentPreview{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .archLayers{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+@media (max-width:1050px){
+  .proSide{position:relative!important;width:100%!important;height:auto!important;min-width:0!important;border-right:0!important;border-bottom:1px solid #14344a!important;padding:12px!important}
+  .proBrand{padding:4px 8px 12px!important}
+  .sideLabel,.sideSystem,.sideFoot,.proSide footer{display:none!important}
+  .proSide nav{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+  .proSide nav button{justify-content:center!important;padding:10px 6px!important}
+  .proSide nav button span{font-size:9px!important}
+  .proSide nav button strong{display:none!important}
+  .proMain{margin-left:0!important;width:100%!important;max-width:100%!important}
+  .proTop{position:relative!important}
+  .commandHero{grid-template-columns:1fr!important}
+  .heroCore{height:210px!important}
+  .commandGrid{grid-template-columns:1fr!important}
+  .archAgentGrid,.archWorkforce,.fleetGrid,.agentPreview{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .settingsGrid,.settingsLayout,.settingGrid{grid-template-columns:1fr!important}
+}
+
+@media (max-width:680px){
+  .proSide nav{grid-template-columns:repeat(3,1fr)!important}
+  .proTop{height:auto;min-height:58px;padding:10px 16px!important}
+  .proTop>div label:not(.ready),.avatar{display:none!important}
+  .proContent{padding:24px 16px 60px!important}
+  .commandHero h1,.pageIntro h1,.archIntro h1{font-size:44px!important}
+  .pipeline{grid-template-columns:1fr 1fr!important}
+  .pipeline>div:last-child{grid-column:1/-1}
+  .composer{grid-template-columns:1fr!important}
+  .composer button{min-height:52px}
+  .archAgentGrid,.archWorkforce,.fleetGrid,.agentPreview{grid-template-columns:1fr!important}
+  .archLayers{grid-template-columns:1fr!important}
+  .latest{grid-template-columns:1fr!important}
+  .latest>button{grid-column:1;grid-row:auto;width:100%}
+  .latestMetrics{grid-template-columns:1fr 1fr!important}
+  .fleetLead{grid-template-columns:1fr!important}
+  .resultMetrics{grid-template-columns:repeat(2,1fr)!important}
+}
