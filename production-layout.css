@@ -1,0 +1,85 @@
+/* SYNORA — production layout for the actual app-pro DOM */
+html,body,#app{width:100%;min-width:0;max-width:100%;overflow-x:hidden!important}
+.proApp{width:100vw;min-width:0!important;max-width:100vw!important}
+.proMain{min-width:0!important;width:calc(100vw - 260px)!important;max-width:calc(100vw - 260px)!important;overflow-x:hidden!important}
+.proContent{width:100%!important;min-width:0!important;max-width:none!important;margin:0!important;padding-left:clamp(28px,3.2vw,58px)!important;padding-right:clamp(28px,3.2vw,58px)!important}
+.proSide{width:260px!important;min-width:260px!important;box-sizing:border-box!important}
+.proSide footer{font-size:8px!important;line-height:1.55!important;letter-spacing:.06em!important;color:#49657a!important;max-width:210px!important;overflow-wrap:anywhere!important}
+
+/* SETTINGS — two true columns, no horizontal spill */
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .settingsGrid{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:20px!important;width:100%!important;max-width:100%!important;min-width:0!important;align-items:stretch!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .settingsCard{width:100%!important;min-width:0!important;max-width:100%!important;padding:30px!important;overflow:hidden!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .settingsCard h2{font-size:clamp(21px,2vw,28px)!important;line-height:1.15!important;margin:13px 0 24px!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .setting{display:grid!important;grid-template-columns:minmax(0,1fr) 52px!important;align-items:center!important;gap:18px!important;width:100%!important;padding:18px!important;border:1px solid #173b50!important;border-radius:16px!important;background:linear-gradient(145deg,#081c29,#06131e)!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .setting p{font-size:11px!important;line-height:1.55!important;color:#70899e!important;margin:7px 0 0!important;max-width:none!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .toggle{width:52px!important;height:30px!important;min-width:52px!important;border-radius:999px!important;padding:3px!important;border:1px solid #24637a!important;background:#092331!important;display:flex!important;align-items:center!important;justify-content:flex-start!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .toggle.on{justify-content:flex-end!important;background:#0b5361!important;border-color:#27c9df!important;box-shadow:0 0 22px #36e5ff22!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .toggle i{width:22px!important;height:22px!important;border-radius:50%!important;background:#56e8ad!important;display:block!important;box-shadow:0 0 16px #55e7a866!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .clearBtn{margin-top:16px!important;border:1px solid #713f4d!important;background:#210f18!important;color:#e6a8b7!important;border-radius:10px!important;padding:10px 14px!important;font:8px 'DM Mono',monospace!important;cursor:pointer!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .boundary{display:grid!important;grid-template-columns:12px minmax(0,1fr)!important;gap:13px!important;padding:17px 0!important;border-top:1px solid #15384c!important;min-width:0!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .boundary i{width:8px!important;height:8px!important;border-radius:50%!important;background:#60798b!important;margin-top:5px!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .boundary.cyan i{background:#36e5ff!important;box-shadow:0 0 14px #36e5ff!important}
+.proApp:has(.proSide nav button.sel[data-view="settings"]) .boundary p{font-size:10px!important;line-height:1.55!important;color:#627c91!important;margin:7px 0 0!important}
+
+/* ARCHITECTURE — actual app-pro markup: .flow + .archAgents + .layerGrid */
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap{width:100%!important;max-width:100%!important;min-width:0!important;padding:26px!important;overflow:hidden!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow{display:grid!important;grid-template-columns:minmax(130px,1fr) 48px minmax(190px,1.25fr) 48px minmax(190px,1.25fr) 48px minmax(150px,1fr)!important;gap:0!important;align-items:stretch!important;width:100%!important;min-width:0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow article{min-width:0!important;min-height:156px!important;padding:20px!important;border:1px solid #1a4a61!important;border-radius:16px!important;background:linear-gradient(150deg,#081d2a,#06121d)!important;display:flex!important;flex-direction:column!important;justify-content:center!important;overflow:hidden!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow article.coreNode{border-color:#2bd3e9!important;background:linear-gradient(145deg,#0b2f41,#081923)!important;box-shadow:0 0 45px #36e5ff14,inset 0 0 30px #36e5ff08!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow article strong{font-size:27px!important;color:#42e5f7!important;margin:5px 0 8px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow article>b{font-size:11px!important;letter-spacing:.1em!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow article em{font-style:normal!important;color:#65e3ae!important;font:8px 'DM Mono',monospace!important;margin-top:7px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow article p{font-size:9px!important;line-height:1.55!important;color:#6f899d!important;margin:8px 0 0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow>i{display:grid!important;place-items:center!important;font-style:normal!important;color:#36e5ff!important;font:8px 'DM Mono',monospace!important;white-space:nowrap!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap footer{margin-top:18px!important;padding:14px 18px!important;border:1px solid #17445a!important;border-radius:12px!important;background:#06141f!important;color:#6d879b!important;font:9px 'DM Mono',monospace!important;text-align:center!important;letter-spacing:.12em!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap footer span{color:#36e5ff!important;padding:0 12px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archTitle{display:flex!important;justify-content:space-between!important;align-items:end!important;gap:20px!important;margin:38px 0 16px!important;min-width:0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archTitle h2{font-size:clamp(27px,3vw,42px)!important;letter-spacing:-.045em!important;margin:7px 0 5px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archTitle p{font-size:11px!important;color:#6f899d!important;margin:0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archTitle>b{font:8px 'DM Mono',monospace!important;color:#557187!important;white-space:nowrap!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:12px!important;width:100%!important;min-width:0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article{min-width:0!important;min-height:250px!important;padding:20px!important;border-radius:17px!important;position:relative!important;overflow:hidden!important;background:linear-gradient(155deg,#091e2b,#06121d)!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article:before{content:"";position:absolute;left:0;top:0;width:100%;height:2px;background:linear-gradient(90deg,#36e5ff,#8f7cff);opacity:.8}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article>span{font:9px 'DM Mono',monospace!important;color:#36e5ff!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article>strong{display:block!important;font-size:20px!important;color:#8befff!important;margin:10px 0 18px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article>h3{font-size:14px!important;letter-spacing:.07em!important;margin:0 0 6px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article>b{font-size:10px!important;color:#b6cbd9!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article>p{font-size:10px!important;line-height:1.65!important;color:#6e879c!important;margin:13px 0 20px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents>article>small{display:block!important;margin-top:auto!important;padding-top:13px!important;border-top:1px solid #15384b!important;color:#4f6c80!important;font:7px 'DM Mono',monospace!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;margin-top:18px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid>article{min-width:0!important;min-height:190px!important;padding:20px!important;overflow:hidden!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid>article>b{color:#36e5ff!important;font:9px 'DM Mono',monospace!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid>article>small{display:block!important;color:#557287!important;font:7px 'DM Mono',monospace!important;margin-top:18px!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid>article h3{font-size:14px!important;line-height:1.3!important;margin:8px 0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid>article p{font-size:9px!important;line-height:1.6!important;color:#6b8498!important;margin:0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .aws{display:grid!important;grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr)!important;gap:30px!important;align-items:center!important;margin-top:18px!important;padding:24px!important;min-width:0!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .aws>div:last-child{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:10px!important;flex-wrap:wrap!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .aws>div:last-child b{padding:10px 12px!important;border:1px solid #1a4a61!important;border-radius:10px!important;background:#071a26!important;font:8px 'DM Mono',monospace!important;color:#a7c0cf!important}
+.proApp:has(.proSide nav button.sel[data-view="architecture"]) .aws>div:last-child i{color:#36e5ff!important;font-style:normal!important}
+
+/* GENERAL CARD DISCIPLINE */
+.panel{min-width:0!important;max-width:100%!important}
+.panel h1,.panel h2,.panel h3,.panel h4,.panel p,.panel strong,.panel b,.panel span{overflow-wrap:anywhere!important}
+
+@media(max-width:1280px){
+ .proMain{width:calc(100vw - 240px)!important;max-width:calc(100vw - 240px)!important;margin-left:240px!important}
+ .proSide{width:240px!important;min-width:240px!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow{grid-template-columns:1fr!important;gap:8px!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap .flow>i{height:28px!important;transform:rotate(90deg)!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .aws{grid-template-columns:1fr!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .aws>div:last-child{justify-content:flex-start!important}
+}
+@media(max-width:900px){
+ .proApp:has(.proSide nav button.sel[data-view="settings"]) .settingsGrid{grid-template-columns:1fr!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archAgents,.proApp:has(.proSide nav button.sel[data-view="architecture"]) .layerGrid{grid-template-columns:1fr!important}
+}
+@media(max-width:680px){
+ .proSide{width:100%!important;min-width:0!important}
+ .proMain{width:100%!important;max-width:100%!important;margin-left:0!important}
+ .proApp:has(.proSide nav button.sel[data-view="settings"]) .settingsCard{padding:20px!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archMap{padding:18px!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archTitle{display:block!important}
+ .proApp:has(.proSide nav button.sel[data-view="architecture"]) .archTitle>b{display:block!important;margin-top:10px!important}
+}
