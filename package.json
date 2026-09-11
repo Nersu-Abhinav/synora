@@ -1,0 +1,10 @@
+{
+  "name": "synora",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SYNORA — an AI workforce command center for coordinated multi-agent workflows.",
+  "type": "module",
+  "dependencies": {
+    "@strands-agents/sdk": "^1.17.0"
+  }
+}
